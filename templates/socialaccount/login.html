@@ -1,0 +1,85 @@
+{% extends "index.html" %}
+{% load i18n %}
+
+
+
+{% block content %}
+
+
+
+
+<section class="bg0 p-t-104 p-b-116">
+    <div class="container">
+        <div class="flex-w flex-tr space-between">
+            <div class="size-210 bor10 p-lr-70 p-t-55 p-b-70 p-lr-15-lg w-full-md">
+                
+                    
+                    <form method="post">
+                        {% csrf_token %}
+                        <button type="submit" class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer">"Continue"</button>
+                      </form>
+                    
+                
+        
+            </div>
+
+            <div class="size-220 bor10 flex-w flex-col-m p-lr-93 p-tb-30 p-lr-15-lg w-full-md">
+                <div class="flex-w w-full p-b-42">
+                    <span class="fs-18 cl5 txt-center size-211">
+                        <span class="lnr lnr-map-marker"></span>
+                    </span>
+
+                    <div class="size-212 p-t-2">
+                        <span class="mtext-110 cl2">
+                            {% if process == "connect" %}
+                            <h1>{% blocktrans with provider.name as provider %}Connect {{ provider }}{% endblocktrans %}</h1>
+                            
+                            <p>{% blocktrans with provider.name as provider %}You are about to connect a new third party account from {{ provider }}.{% endblocktrans %}</p>
+                            {% else %}
+                            <h1>{% blocktrans with provider.name as provider %}Sign In Via {{ provider }}{% endblocktrans %}</h1>
+                            
+                            <p>{% blocktrans with provider.name as provider %}You are about to sign in using a third party account from {{ provider }}.{% endblocktrans %}</p>
+                            {% endif %}
+                        </span>
+
+
+                    </div>
+                </div>
+
+                <div class="flex-w w-full p-b-42">
+                    <span class="fs-18 cl5 txt-center size-211">
+                        <span class="lnr lnr-phone-handset"></span>
+                    </span>
+
+                    <div class="size-212 p-t-2">
+                        <span class="mtext-110 cl2">
+                            Lets Talk
+                        </span>
+
+                        <p class="stext-115 cl1 size-213 p-t-18">
+                            +1 800 1236879
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex-w w-full">
+                    <span class="fs-18 cl5 txt-center size-211">
+                        <span class="lnr lnr-envelope"></span>
+                    </span>
+
+                    <div class="size-212 p-t-2">
+                        <span class="mtext-110 cl2">
+                            Sale Support
+                        </span>
+
+                        <p class="stext-115 cl1 size-213 p-t-18">
+                            contact@example.com
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>	
+
+{% endblock %}

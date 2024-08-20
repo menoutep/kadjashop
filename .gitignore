@@ -1,0 +1,7 @@
+accounts.log
+base.log
+django.log
+logs/*
+logs/
+media/*
+kadjashop/.env
